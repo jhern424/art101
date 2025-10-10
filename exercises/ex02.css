@@ -1,0 +1,63 @@
+h1 {background-color: rgba(174, 114, 165, 0.36);}
+
+p { 
+    color: rgb(208, 95, 38);
+    background-color: antiquewhite;
+}
+.color-yellow {
+    color: rgb(220, 174, 8);
+    background-color: rgba(219, 208, 159, 0.312);
+    padding-top: 25px;
+    margin: 50px;
+}
+.color-green {
+    color: rgb(47, 160, 21);
+    background-color: rgba(101, 234, 139, 0.312);
+    padding-top: 25px;
+    margin: 50px;
+}
+.color-red {
+    color: rgb(253, 2, 38);
+    background-color: rgba(224, 169, 214, 0.312);
+    padding-top: 25px;
+    margin: 50px;
+}
+body {
+    background-color: rgba(185, 183, 179, 0.072);
+}
+
+#hello {
+    color: rgb(145, 21, 21);
+    background-color: rgba(255, 255, 255, 0.692);
+    padding-top: 25px;
+    margin: 50px;
+}
+
+#cute-cat {
+    width: 400px;
+    display: block;
+    margin: 0 auto;
+}
+
+.button {
+    background-color: rgb(244, 137, 6);
+    border: none;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 200px;
+    box-sizing: border-box;
+}
+
+.button a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
