@@ -1,0 +1,76 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    min-height: 100vh;
+    position: relative;
+    background-image: url('images/Modulo1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#jellyfish {
+    display: none;
+}
+
+#jelly {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30%;
+    max-width: 300px;
+}
+
+#lantern {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80%;
+    max-width: 980px;
+}
+
+#whale {
+    width: 50%;
+    max-width: 500px;
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.container p {
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    font-family: Arial, sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    color: #1e43c7;
+    line-height: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.button {
+    background-color: rgb(244, 137, 6);
+    border: none;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 200px;
+    box-sizing: border-box;
+}
+
+.button a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
