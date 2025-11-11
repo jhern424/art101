@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magical Night Garden - Environment 5</title>
+    <link rel="stylesheet" href="env05.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="env05.js" defer></script>
+</head>
+
+<body>
+    <div class="garden-container">
+        <h1 class="title">🌙 Magical Night Garden 🌙</h1>
+        <p class="instructions">Hover over the moon, click the stars, watch the fireflies dance!</p>
+
+        <!-- Moon that responds to hover -->
+        <div class="moon">🌕</div>
+
+        <!-- Stars that respond to clicks -->
+        <div class="stars-container">
+            <div class="star" data-size="big">⭐</div>
+            <div class="star" data-size="medium">⭐</div>
+            <div class="star" data-size="small">⭐</div>
+            <div class="star" data-size="medium">⭐</div>
+            <div class="star" data-size="big">⭐</div>
+        </div>
+
+        <!-- Fireflies that animate -->
+        <div class="fireflies-container">
+            <div class="firefly">✨</div>
+            <div class="firefly">✨</div>
+            <div class="firefly">✨</div>
+            <div class="firefly">✨</div>
+            <div class="firefly">✨</div>
+        </div>
+
+        <!-- Garden creatures -->
+        <div class="creatures-container">
+            <div class="creature" id="butterfly">🦋</div>
+            <div class="creature" id="bee">🐝</div>
+            <div class="creature" id="ladybug">🐞</div>
+        </div>
+
+        <!-- Interactive flowers -->
+        <div class="flowers-container">
+            <div class="flower">🌸</div>
+            <div class="flower">🌺</div>
+            <div class="flower">🌻</div>
+            <div class="flower">🌷</div>
+            <div class="flower">🌹</div>
+        </div>
+
+        <!-- Control panel -->
+        <div class="controls">
+            <button id="day-night-toggle">☀️ Toggle Day/Night</button>
+            <button id="spawn-firefly">+ Add Firefly</button>
+            <button id="reset-garden">🔄 Reset Garden</button>
+        </div>
+    </div>
+
+    <div class="bottom-buttons">
+        <div class="button"><a href="../index.html">← Back to Home</a></div>
+    </div>
+</body>
+
+</html>

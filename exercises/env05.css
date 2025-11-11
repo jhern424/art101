@@ -1,0 +1,291 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #0a0e27 0%, #1a1a3e 50%, #2d1b4e 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    transition: background 1s ease;
+}
+
+body.day-mode {
+    background: linear-gradient(to bottom, #87CEEB 0%, #B0E0E6 50%, #98D8C8 100%);
+}
+
+.garden-container {
+    position: relative;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.title {
+    text-align: center;
+    color: #fff;
+    font-size: 2.5em;
+    margin: 20px 0;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+    transition: color 0.5s ease;
+}
+
+body.day-mode .title {
+    color: #2d1b4e;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.instructions {
+    text-align: center;
+    color: #a8d8ff;
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+body.day-mode .instructions {
+    color: #2d1b4e;
+}
+
+/* Moon styling */
+.moon {
+    position: absolute;
+    top: 80px;
+    right: 100px;
+    font-size: 80px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 30px rgba(255, 255, 0, 0.6));
+}
+
+.moon:hover {
+    transform: scale(1.3) rotate(15deg);
+    filter: drop-shadow(0 0 50px rgba(255, 215, 0, 1));
+}
+
+body.day-mode .moon {
+    content: "☀️";
+    filter: drop-shadow(0 0 30px rgba(255, 140, 0, 0.8));
+}
+
+/* Stars */
+.stars-container {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: calc(100% - 100px);
+    height: 200px;
+}
+
+.star {
+    position: absolute;
+    font-size: 30px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    opacity: 0.7;
+}
+
+.star[data-size="big"] {
+    font-size: 40px;
+}
+
+.star[data-size="small"] {
+    font-size: 20px;
+}
+
+.star:nth-child(1) { top: 20px; left: 10%; }
+.star:nth-child(2) { top: 60px; left: 30%; }
+.star:nth-child(3) { top: 40px; left: 50%; }
+.star:nth-child(4) { top: 80px; left: 70%; }
+.star:nth-child(5) { top: 30px; left: 85%; }
+
+.star:hover {
+    transform: scale(1.5) rotate(180deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 15px yellow);
+}
+
+.star.clicked {
+    animation: starPulse 1s ease-in-out infinite;
+}
+
+@keyframes starPulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.3); opacity: 0.5; }
+}
+
+/* Fireflies */
+.fireflies-container {
+    position: absolute;
+    top: 250px;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    pointer-events: none;
+}
+
+.firefly {
+    position: absolute;
+    font-size: 25px;
+    opacity: 0.8;
+    animation: float 4s ease-in-out infinite;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 150, 0.8));
+}
+
+.firefly:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 3s; }
+.firefly:nth-child(2) { left: 30%; animation-delay: 0.5s; animation-duration: 4s; }
+.firefly:nth-child(3) { left: 50%; animation-delay: 1s; animation-duration: 3.5s; }
+.firefly:nth-child(4) { left: 70%; animation-delay: 1.5s; animation-duration: 4.5s; }
+.firefly:nth-child(5) { left: 85%; animation-delay: 2s; animation-duration: 3.8s; }
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.6;
+    }
+    25% {
+        transform: translateY(-80px) translateX(20px);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-120px) translateX(-15px);
+        opacity: 0.8;
+    }
+    75% {
+        transform: translateY(-60px) translateX(30px);
+        opacity: 1;
+    }
+}
+
+/* Creatures */
+.creatures-container {
+    position: absolute;
+    bottom: 200px;
+    left: 0;
+    width: 100%;
+    height: 150px;
+}
+
+.creature {
+    position: absolute;
+    font-size: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#butterfly {
+    left: 15%;
+    bottom: 80px;
+}
+
+#bee {
+    left: 45%;
+    bottom: 120px;
+}
+
+#ladybug {
+    left: 75%;
+    bottom: 60px;
+}
+
+.creature:hover {
+    transform: scale(1.4) rotate(20deg);
+}
+
+/* Flowers */
+.flowers-container {
+    position: absolute;
+    bottom: 150px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 50px;
+}
+
+.flower {
+    font-size: 60px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform-origin: bottom center;
+}
+
+.flower:hover {
+    transform: scale(1.3) rotate(-10deg);
+    filter: drop-shadow(0 0 20px rgba(255, 105, 180, 0.8));
+}
+
+/* Controls */
+.controls {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 100;
+}
+
+.controls button {
+    background-color: rgb(244, 137, 6);
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.controls button:hover {
+    background-color: rgb(200, 110, 5);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(244, 137, 6, 0.5);
+}
+
+/* Bottom buttons */
+.bottom-buttons {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+}
+
+.button {
+    background-color: rgb(244, 137, 6);
+    border: none;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 12px;
+    padding: 12px 24px;
+}
+
+.button a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: rgb(200, 110, 5);
+}
+
+/* Hidden class for animations */
+.hidden {
+    opacity: 0 !important;
+    pointer-events: none;
+}
+
+.spinning {
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}

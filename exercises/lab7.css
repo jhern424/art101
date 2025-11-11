@@ -1,0 +1,35 @@
+.blocks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.nice-block {
+    height: 40px;
+    overflow: hidden;
+    width: 220px;
+    padding: 10px;
+    background: pink;
+    margin: 10px;
+    box-sizing: border-box;
+}
+
+.less {}
+
+.more {
+    height: auto;
+    overflow: visible;
+}
+
+.nice-block span {
+    cursor: pointer;
+    color: darkviolet;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+.nice-block p {
+    margin: 6px 0 0 0;
+    line-height: 1.4;
+}
