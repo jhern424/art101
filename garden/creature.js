@@ -1,28 +1,32 @@
-// Store creature name variable
-let creatureName = "";
+// Add creature when button is clicked
+$("#add-creature").click(
+    function () {
 
-// When the button is clicked, save and display the name
-$("button").click(function() {
-    // Get the creature name from input
-    creatureName = $("#creature-name").val();
+        // grab the value from the input
+        let crName = $("#crName").val();
+        let crColor= $("#crColor").val();
+        let crEyesNum= $("#crEyesNum").val();
+        let crShape = $("#crShape").val();
+        let crEyesHTML="";
 
-    // Clear any previous error messages
-    $("#error-message").remove();
-
-    if (creatureName == "") {
-        alert("Please enter a creature name.");
-        $("#creature-form").append("<p id='error-message' style='color: red; font-weight: bold;'>⚠️ Please enter a creature name.</p>");
-        return;
-    } else if (creatureName.length > 12) {
-        alert("Creature name is too long. Please limit to 12 characters.");
-        $("#creature-form").append("<p id='error-message' style='color: red; font-weight: bold;'>⚠️ Creature name is too long. Please limit to 12 characters.</p>");
-        return;
-    } else {
-        // Add the name to the creature list
-        $("#creature-list").append("<p>" + creatureName + "</p>");
-    }
+        for (let i = 0; i < crEyesNum ; i++){
+            crEyesHTML=crEyesHTML + "<div class=eye>.</div>";
+        }
 
 
-    // Clear the input field
-    $("#creature-name").val("");
-});
+        // check for the field value do not add empty ones
+        if ( (crName == "") || (crName.length>12) ) { // do nothing 
+        }
+        else {
+            $("#creature-list").append(`
+<div class="creature">
+    <div class="creature-body ${crShape}" style="background: ${crColor}">${crEyesHTML}</div>
+    <div class="creature-info">${crName}</div>
+</div>
+`);
+        }
+
+        // remove the name after it's added
+        $("#crName").val("");
+
+    });
